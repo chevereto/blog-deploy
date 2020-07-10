@@ -12,7 +12,7 @@ jobs:
         with:
           repository: ${{ secrets.REPO_BLOG }}
           token: ${{ secrets.REPO_BLOG_ACCESS_TOKEN }}
-          path: docs
+          path: blog
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
@@ -33,5 +33,5 @@ jobs:
           TARGET_REPO: ${{ secrets.REPO_HOSTING }}
           TARGET_BRANCH: master
           BUILD_SCRIPT: yarn && yarn build
-          BUILD_DIR: docs/.vuepress/dist/
+          BUILD_DIR: blog/.vuepress/dist/
           # CNAME: ${{ secrets.CNAME }}
