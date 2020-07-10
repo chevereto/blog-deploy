@@ -14,35 +14,6 @@ jobs:
           token: ${{ secrets.REPO_BLOG_ACCESS_TOKEN }}
           path: docs
 
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: 7.4
-          extensions: opcache, mbstring, ds
-          ini-values: opcache.enable_cli = 1, opcache.enable = 1
-
-      - name: Get Composer Cache Directory
-        id: composer-cache
-        run: |
-          echo "::set-output name=dir::$(composer config cache-files-dir)"
-
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.json') }}
-          restore-keys: |
-            ${{ runner.os }}-composer-
-
-      - name: Install PHP dependencies
-        run: composer install --prefer-dist
-
-      - name: Copy .vuepress/ contents to docs/.vuepress/
-        run: cp -rf .vuepress/. docs/.vuepress/
-
-      - name: Build with PHP
-        run: php build.php
-
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
@@ -56,7 +27,7 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: vuepress-deploy
-        uses: jenkey2011/vuepress-deploy@master
+        uses: jenkey2011/vuepress-deploy@masterS
         env:
           ACCESS_TOKEN: ${{ secrets.REPO_HOSTING_ACCESS_TOKEN }}
           TARGET_REPO: ${{ secrets.REPO_HOSTING }}
