@@ -1,56 +1,54 @@
 <template>
-<div id="vuepress-theme-blog__post-layout">
+  <div id="vuepress-theme-blog__post-layout">
+    <article
+      class="vuepress-blog-theme-content"
+      itemscope
+      itemtype="https://schema.org/BlogPosting"
+    >
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <header>
+            <span class="text-muted">
+              <PostMeta :date="$frontmatter.date" />
+            </span>
+            <h1 class="article-head mt-3" itemprop="name headline">
+              {{ $frontmatter.title }}
+            </h1>
+            <p class="lead">{{ $frontmatter.description }}</p>
 
-<article
-class="vuepress-blog-theme-content"
-itemscope
-itemtype="https://schema.org/BlogPosting"
->
+            <Avatar />
+          </header>
+        </div>
+      </div>
 
-<div class="row justify-content-center">
-  <div class="col-md-8">
-  <header>
+      <div class="row justify-content-center text-center mt-4 mb-40">
+        <div class="col-md-9">
+          <img class="featuredimg" :src="$frontmatter.featuredimg" />
+        </div>
+      </div>
 
-  <span class="text-muted"><PostMeta  :date="$frontmatter.date" /></span>
-  <h1 class="article-head mt-3" itemprop="name headline">
-  {{ $frontmatter.title }}
-  </h1>
-  <p class="lead">{{ $frontmatter.description }}</p>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <Content itemprop="articleBody" />
+        </div>
+      </div>
+    </article>
 
-  <Avatar />
+    <div class="row justify-content-center">
+      <div class="col-md-9">
+        <Newsletter v-if="$service.email.enabled" />
+        <Comment />
+      </div>
+    </div>
 
-  </header>
+    <div class="row justify-content-center mt-40">
+      <div class="col-md-8">
+        <PostMeta :tags="$frontmatter.tags" />
+      </div>
+    </div>
+
+    <Toc />
   </div>
-</div>
-
-<div class="row justify-content-center text-center mt-4 mb-40">
-  <div class="col-md-9">
-    <img class="featuredimg" :src="$frontmatter.featuredimg">
-  </div>
-</div>
-
-<div class="row justify-content-center">
-  <div class="col-md-8">
-  <Content  itemprop="articleBody" />
-
-
-  <PostMeta
-  :tags="$frontmatter.tags"/>
-
-  </div>
-</div>
-
-</article>
-
-<div class="row justify-content-center">
-  <div class="col-md-9">
-    <Newsletter v-if="$service.email.enabled" />
-    <Comment />
-  </div>
-</div>
-
-<Toc />
-</div>
 </template>
 
 <script>
@@ -67,10 +65,9 @@ export default {
     Comment,
     Newsletter: () => import('@theme/components/Newsletter.vue'),
   },
-
 }
 </script>
 
 <style lang="stylus" scoped>
-@import url('https://fonts.googleapis.com/css?family=Merriweather:400,400i,700&display=swap')
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,400i,700&display=swap');
 </style>

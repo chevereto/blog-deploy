@@ -7,7 +7,7 @@ module.exports = themeConfig => {
    * Default theme configuration
    */
   themeConfig = Object.assign(themeConfig, {
-    logo: '/assets/img/logo.png',
+    logo: '/logo.png',
     nav: themeConfig.nav || [
       {
         text: 'Blog',
@@ -32,7 +32,7 @@ module.exports = themeConfig => {
   const defaultBlogPluginOptions = {
     directories: [
       {
-        id: 'post',
+        id: 'blog',
         dirname: '_posts',
         path: '/',
       },

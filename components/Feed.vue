@@ -15,9 +15,9 @@ export default {
   components: { RssIcon },
   filters: {
     getFeedFilePath(feed) {
-      if (feed === 'rss') return './rss.xml'
-      if (feed === 'atom') return './feed.atom'
-      if (feed === 'json') return './feed.json'
+      if (feed === 'rss') return '/rss.xml'
+      if (feed === 'atom') return '/feed.atom'
+      if (feed === 'json') return '/feed.json'
       return ''
     },
   },

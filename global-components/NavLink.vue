@@ -1,7 +1,7 @@
 <template>
   <router-link
     v-if="!isExternal(normalizedlink)"
-    class=""
+    class
     :to="normalizedlink"
     :exact="exact"
   >
@@ -58,10 +58,13 @@ export default {
 </script>
 
 <style lang="stylus">
-.nav-link
-  color $darkTextColor
+.nav-link {
+  color: $darkTextColor;
+}
 
-.nav-link
-  &:hover, &.router-link-active
-    color $accentColor
+.nav-link {
+  &:hover, &.router-link-active {
+    color: $accentColor;
+  }
+}
 </style>

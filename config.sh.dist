@@ -1,0 +1,5 @@
+# !/usr/bin/env sh
+
+GIT_BLOG="git@github.com:rodolfoberrios/blog.git"
+GIT_HOSTING="git@github.com:rodolfoberrios/rodolfoberrios.github.io.git"
+#CNAME="chevere.org"
