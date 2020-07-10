@@ -1,4 +1,4 @@
 
-# The Rodo Fork of VuePress Theme Mediumish
+# VuePress Theme Mediumish
 
-This is a variation of `vuepress-theme-mediumish`.
+_The Rodo Fork_ of `wowthemesnet/mediumish-vuepress-blog-theme`.
