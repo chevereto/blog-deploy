@@ -18,6 +18,9 @@ jobs:
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
 
+      - name: Move blog/public/ to blog/.vuepress/
+        run: mv -f blog/public/ blog/.vuepress/public/
+
       - uses: actions/cache@v2
         id: yarn-cache
         with:

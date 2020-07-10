@@ -38,6 +38,9 @@ else
     echo 'Skipping blog sourcing...'
 fi
 
+echo 'Move blog/public/ to blog/.vuepress/'
+mv -f blog/public/ blog/.vuepress/public/
+
 yarn
 
 if [ "$1" = 'dev' ]; then
