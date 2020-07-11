@@ -37,4 +37,4 @@ jobs:
           TARGET_BRANCH: master
           BUILD_SCRIPT: yarn && yarn build
           BUILD_DIR: blog/.vuepress/dist/
-          # CNAME: ${{ secrets.CNAME }}
+          CNAME: ${{ secrets.CNAME }}
