@@ -17,7 +17,7 @@
         <div class="entry card h-100">
           <div class="card-header-image">
             <NavLink :link="page.path">
-              <img :src="page.frontmatter.featuredimg" />
+              <img :src="page.frontmatter.featuredImage" />
             </NavLink>
           </div>
 

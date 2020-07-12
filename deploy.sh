@@ -11,11 +11,11 @@ else
 fi
 
 if [ "$1" = 'prod' ] && [ "$2" != 'true' ]; then
-    echo -n "Are you sure to going production without sourcing blog repo? It will source from ./blog (y/n)? "
+    echo -n "Are you sure to going production without sourcing blog repo? It will source from existing blog/ (y/n)? "
     read answer
     if [ "$answer" != "${answer#[Nn]}" ]; then
         echo 'Ok no worries...'
-        exit 1
+        exit 0
     fi
 fi
 
@@ -38,8 +38,25 @@ else
     echo 'Skipping blog sourcing...'
 fi
 
-echo 'Move blog/public/ to blog/.vuepress/'
-mv -f blog/public/ blog/.vuepress/public/
+if [ ! -d "blog" ]; then
+    echo 'No blog/ directory'
+    exit 1
+fi
+
+if [ ! -d "blog/public" ]; then
+    if [ -d "blog/.vuepress/public" ]; then
+        echo 'Using existing blog/.vuepress/public/'
+    else
+        echo 'Missing blog/public/ directory'
+        exit 1
+    fi
+else
+    echo 'Move blog/public/ to blog/.vuepress/'
+    rm -rf blog/.vuepress/public/
+    mv -f blog/public/ blog/.vuepress/public/
+fi
+
+echo 'Yarn tiempos'
 
 yarn
 

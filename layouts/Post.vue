@@ -11,9 +11,7 @@
             <span class="text-muted">
               <PostMeta :date="$frontmatter.date" />
             </span>
-            <h1 class="article-head mt-3" itemprop="name headline">
-              {{ $frontmatter.title }}
-            </h1>
+            <h1 class="article-head mt-3" itemprop="name headline">{{ $frontmatter.title }}</h1>
             <p class="lead">{{ $frontmatter.description }}</p>
 
             <Avatar />
@@ -23,7 +21,7 @@
 
       <div class="row justify-content-center text-center mt-4 mb-40">
         <div class="col-md-9">
-          <img class="featuredimg" :src="$frontmatter.featuredimg" />
+          <img class="featured-img" :src="$frontmatter.featuredImage" />
         </div>
       </div>
 
