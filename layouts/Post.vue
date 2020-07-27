@@ -21,7 +21,7 @@
 
       <div class="row justify-content-center text-center mt-4 mb-40">
         <div class="col-md-9">
-          <img class="featured-img" :src="$frontmatter.featuredImage" />
+          <img class="featured-img" :src="$frontmatter.featuredImage"/>
         </div>
       </div>
 
@@ -50,6 +50,7 @@
 </template>
 
 <script>
+import mediumZoom from 'medium-zoom'
 import Toc from '@theme/components/Toc.vue'
 import PostMeta from '@theme/components/PostMeta.vue'
 import Avatar from '@theme/components/Avatar.vue'
@@ -62,6 +63,9 @@ export default {
     Avatar,
     Comment,
     Newsletter: () => import('@theme/components/Newsletter.vue'),
+  },
+  mounted() {
+      mediumZoom('.vuepress-blog-theme-content :not(a) > img');
   },
 }
 </script>
