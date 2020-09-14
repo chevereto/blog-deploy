@@ -157,4 +157,4 @@ Command syntax:
 ## Known bugs
 
 - 🤷🏾 Feeds won't work in `dev`, only in `build`.
-- ⚠ Posts markdown files, (`post-name.md`) must not start with a digit. No idea why the `service-worker` breaks on those.
+- ⚠ Posts markdown files, (`YYYY-MM-DD-<name_here>.md`) must not start with a digit at `name_here`. No idea why the `service-worker` breaks on those.
