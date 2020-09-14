@@ -124,13 +124,7 @@ Copy `config.sh.dist` to `config.sh`.
 cp config.sh.dist config.sh
 ```
 
-Change the variables in `config.sh` to match the target project.
-
-Run `yarn dev` to preview.
-
-```sh
-yarn dev
-```
+Change the variables in `config.sh` to match the target project. In this file you will configure the repositories for blog sourcing and hosting.
 
 ### Shell commands
 
@@ -140,21 +134,27 @@ Make sure that `deploy.sh` is executable.
 chmod +x deploy.sh
 ```
 
+Command syntax:
+
 ```sh
 ./deploy.sh <to> <doSource>
 ```
 
 `<to>` deploy options:
 
-- `dev` To deploy dev.
-- `prod`: To deploy to production.
+| Option  | Effect  |
+|---|---|
+| `dev`  | Deploys dev preview |
+| `prod`  | Deploys to production |
 
 `<doSource>` option:
 
-- `true` to source the blog from the target repo.
-- `false` to skip the blog sourcing (will use local `blog/`).
+| Option  | Effect  |
+|---|---|
+| `true`  | Source `blog/` from the target blog repo |
+| `false`  | Skip the blog sourcing (will use local `blog/`) |
 
 ## Known bugs
 
 - 🤷🏾 Feeds won't work in `dev`, only in `build`.
-- ⚠ Post `<name_here>` must not start with a digit. No idea why the `service-worker` breaks on those.
+- ⚠ Posts markdown files, (`post-name.md`) must not start with a digit. No idea why the `service-worker` breaks on those.
