@@ -81,7 +81,7 @@ if [ "$1" = 'prod' ]; then
     git init
     git add -A
     git commit -m 'deploy'
-    git push -f $GIT_HOSTING master
+    git push -f $GIT_HOSTING main
 
     cd -
 fi
