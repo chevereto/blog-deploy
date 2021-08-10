@@ -4,6 +4,8 @@
 
 It takes _any_ markdown blog repo and generates a VuePress app that can be configured to be automatically published to GitHub pages.
 
+[View Demo](https://wowthemesnet.github.io/vuepress-theme-mediumish/) | [View Documentation](https://bootstrapstarter.com/vuepress-theme-mediumish/)
+
 ## Requirements
 
 - A markdown blog repository following a simply scheme (example [rodolfoberrios/blog](https://github.com/rodolfoberrios/blog/)).
@@ -142,17 +144,17 @@ Command syntax:
 
 `<to>` deploy options:
 
-| Option  | Effect  |
-|---|---|
-| `dev`  | Deploys dev preview |
-| `prod`  | Deploys to production |
+| Option | Effect                |
+| ------ | --------------------- |
+| `dev`  | Deploys dev preview   |
+| `prod` | Deploys to production |
 
 `<doSource>` option:
 
-| Option  | Effect  |
-|---|---|
-| `true`  | Source `blog/` from the target blog repo |
-| `false`  | Skip the blog sourcing (will use local `blog/`) |
+| Option  | Effect                                          |
+| ------- | ----------------------------------------------- |
+| `true`  | Source `blog/` from the target blog repo        |
+| `false` | Skip the blog sourcing (will use local `blog/`) |
 
 ## Known bugs
 
