@@ -109,7 +109,6 @@ nav
   flex: 0 0 100%
   max-width: 100%
   .card
-    border-radius: 1em
     display: flex
     flex-direction: row
     -ms-flex-direction: row
@@ -118,10 +117,8 @@ nav
     width: 50%
     margin: 0px
     img
-      border-radius: 1em 1em 0 0
       height: 100%
       min-height: 300px
-      object-position: center
   .card-subheading
     padding-top: 0
   .card-inside
@@ -140,17 +137,14 @@ nav
     left: calc(50% + 40px)
 .card
   padding: 20px
-  border-radius: 0
-  -webkit-border-radius: 0
-  -moz-border-radius: 0
-  -ms-border-radius: 0
-  -o-border-radius: 0
+  border-radius: 1em
 .card-header-image
   display: block
   margin: -20px -20px 0 -20px
   img
+    border-radius: 1em 1em 0 0
     object-fit: cover
-    object-position: top
+    object-position: center
     height: 180px
     width: 100%
     cursor: pointer
