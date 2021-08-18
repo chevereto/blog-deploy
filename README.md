@@ -2,9 +2,9 @@
 
 > _The Rodo Fork_ of `wowthemesnet/mediumish-vuepress-blog-theme` with super powers.
 
-It takes _any_ markdown blog repo and generates a VuePress app that can be configured to be automatically published to GitHub pages.
+It takes a markdown blog repo and generates a VuePress app that can be configured to be automatically published to GitHub pages.
 
-[View Demo](https://wowthemesnet.github.io/vuepress-theme-mediumish/) | [View Documentation](https://bootstrapstarter.com/vuepress-theme-mediumish/)
+[View Demo](https://rodolfo.is/)
 
 ## Requirements
 
