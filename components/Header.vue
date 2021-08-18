@@ -144,7 +144,6 @@ export default {
 @media (max-width: 768px) {
   .navbar.navbar-expand-md {
     padding: 1.2rem;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03), 0 6px 6px rgba(0, 0, 0, 0.05);
     transition: all 1s cubic-bezier(0.25, 0.8, 0.25, 1);
     display: flex;
     align-items: center;

@@ -7,12 +7,12 @@
 
 @import '../node_modules/bootstrap-4-stylus/bootstrap.styl'
 
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap")
+@import url("https://fonts.googleapis.com/css?family=Inter:wght@100;400;700;900&display=swap")
 
 $color_1 = rgba(0, 0, 0, 0.54)
 $color_2 = rgba(0, 0, 0, 0.44)
 $color_3 = rgba(0, 0, 0, 0.8)
-$primary_font_family = 'Source Sans Pro'
+$primary_font_family = 'Inter'
 $second_font_family = 'Merriweather'
 body
   font-family: $primary_font_family
@@ -37,6 +37,8 @@ nav
     width: 30px
 .navbar
   padding: .5rem 1.5rem
+  background-color: rgba(255,255,255,.9)
+  backdrop-filter: blur(5px)
   .tagline
     color: $color_2
 .nav-link
@@ -107,6 +109,7 @@ nav
   flex: 0 0 100%
   max-width: 100%
   .card
+    border-radius: 1em
     display: flex
     flex-direction: row
     -ms-flex-direction: row
@@ -115,8 +118,10 @@ nav
     width: 50%
     margin: 0px
     img
+      border-radius: 1em 1em 0 0
       height: 100%
       min-height: 300px
+      object-position: center
   .card-subheading
     padding-top: 0
   .card-inside
