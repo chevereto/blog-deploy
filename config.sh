@@ -1,5 +1,5 @@
 # !/usr/bin/env sh
 
-GIT_BLOG="git@github.com:chevereto/blog.git"
-GIT_HOSTING="git@github.com:chevereto/blog.chevereto.com.git"
-CNAME="blog.chevereto.com"
+GIT_BLOG="git@github.com:rodber/blog.git"
+GIT_HOSTING="git@github.com:rodber/rodolfoberrios.github.io.git"
+CNAME="rodolfo.is"
