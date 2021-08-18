@@ -11,7 +11,9 @@
             <span class="text-muted">
               <PostMeta :date="$frontmatter.date" />
             </span>
-            <h1 class="article-head mt-3" itemprop="name headline">{{ $frontmatter.title }}</h1>
+            <h1 class="article-head mt-3" itemprop="name headline">
+              {{ $frontmatter.title }}
+            </h1>
             <p class="lead">{{ $frontmatter.description }}</p>
 
             <Avatar />
@@ -21,7 +23,7 @@
 
       <div class="row justify-content-center text-center mt-4 mb-40">
         <div class="col-md-9">
-          <img class="featured-img" :src="$frontmatter.featuredImage"/>
+          <img class="featured-img" :src="$frontmatter.featuredImage" />
         </div>
       </div>
 
@@ -65,11 +67,7 @@ export default {
     Newsletter: () => import('@theme/components/Newsletter.vue'),
   },
   mounted() {
-      mediumZoom('.vuepress-blog-theme-content :not(a) > img');
+    mediumZoom('.vuepress-blog-theme-content :not(a) > img')
   },
 }
 </script>
-
-<style lang="stylus" scoped>
-@import url('https://fonts.googleapis.com/css?family=Merriweather:400,400i,700&display=swap');
-</style>

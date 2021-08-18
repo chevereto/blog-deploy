@@ -16,13 +16,11 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import url('https://fonts.googleapis.com/css?family=Merriweather:400,400i,700&display=swap')
-.blog-tags
-  min-height:500px
-.blog-tag
-  border-radius:50px
-  &:hover
-    text-decoration:none
-h1
-  line-height:1.3
+.blog-tags {
+  min-height: 500px;
+}
+
+h1 {
+  line-height: 1.3;
+}
 </style>
