@@ -1,4 +1,5 @@
-node_modules
+.DS_Store
 .temp
-dist
+/node_modules
+/dist
 /blog

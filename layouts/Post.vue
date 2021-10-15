@@ -23,7 +23,7 @@
 
       <div class="row justify-content-center text-center mt-4 mb-40">
         <div class="col-md-9">
-          <img class="featured-img" :src="$frontmatter.featuredImage" />
+          <img class="featured-img" :src="$frontmatter.image" />
         </div>
       </div>
 
