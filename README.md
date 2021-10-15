@@ -58,7 +58,10 @@ tags:
     - ✊🏾resurrecting
 author: Rodolfo
 summary: Vuelvo a renacer, amado pueblo... Se siente tan vacío sin mi!
-featuredImage: /photos/2020-jesus.jpg
+image: /photos/image.jpg
+feed:
+  description: Description used in feed
+  image: /photos/image-alt.jpg
 ---
 ```
 
