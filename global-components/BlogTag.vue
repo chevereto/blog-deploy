@@ -9,5 +9,3 @@ export default {
   props: ['tag'],
 }
 </script>
-
-<style lang="stylus"></style>
