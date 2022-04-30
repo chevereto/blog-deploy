@@ -4,7 +4,7 @@
 
 It takes a markdown blog repo and generates a VuePress app that can be configured to be automatically published to GitHub pages.
 
-[View Demo](https://rodolfo.is/)
+[View Demo](https://rodolfoberrios.com/)
 
 ## Requirements
 
@@ -87,7 +87,7 @@ Requirements:
 - `REPO_BLOG_ACCESS_TOKEN` token for the repo above
 - `REPO_HOSTING` example `rodolfoberrios/rodolfoberrios.github.io`
 - `REPO_HOSTING_ACCESS_TOKEN` token for the repo above
-- `CNAME` example `rodolfo.is`
+- `CNAME` example `rodolfoberrios.com`
 
 ### Require Secrets (on blog repo)
 
