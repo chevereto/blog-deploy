@@ -38,6 +38,12 @@ else
     echo 'Skipping blog sourcing...'
 fi
 
+if [ "$2" = 'dir' ] && [ $# -eq 3 ]; then
+    echo "Sourcing blog from directory $3"
+    rm -rf blog/
+    cp -a $3 blog/
+fi
+
 if [ ! -d "blog" ]; then
     echo 'No blog/ directory'
     exit 1
