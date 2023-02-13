@@ -10,7 +10,7 @@ else
     echo 'Using config.sh.dist'
 fi
 
-if [ "$1" = 'prod' ] && [ "$2" != 'true' ]; then
+if [ "$1" = 'prod' ] && [ "$2" != 'repo' ]; then
     echo -n "Are you sure to going production without sourcing blog repo? It will source from existing blog/ (y/n)? "
     read answer
     if [ "$answer" != "${answer#[Nn]}" ]; then
@@ -19,7 +19,7 @@ if [ "$1" = 'prod' ] && [ "$2" != 'true' ]; then
     fi
 fi
 
-if [ "$2" = 'true' ]; then
+if [ "$2" = 'repo' ]; then
     if [ -d "blog" ]; then
         cd blog
         if [ "$(git config --get remote.origin.url)" != "$GIT_BLOG" ]; then
@@ -36,6 +36,12 @@ if [ "$2" = 'true' ]; then
     fi
 else
     echo 'Skipping blog sourcing...'
+fi
+
+if [ "$2" = 'dir' ] && [ $# -eq 3 ]; then
+    echo "Sourcing blog from directory $3"
+    rm -rf blog/
+    cp -a $3 blog/
 fi
 
 if [ ! -d "blog" ]; then
