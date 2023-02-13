@@ -142,7 +142,7 @@ chmod +x deploy.sh
 Command syntax:
 
 ```sh
-./deploy.sh <to> <doSource>
+./deploy.sh <to> <target>
 ```
 
 `<to>` deploy options:
@@ -152,12 +152,12 @@ Command syntax:
 | `dev`  | Deploys dev preview   |
 | `prod` | Deploys to production |
 
-`<doSource>` option:
+`<target>` option:
 
-| Option  | Effect                                          |
-| ------- | ----------------------------------------------- |
-| `true`  | Source `blog/` from the target blog repo        |
-| `false` | Skip the blog sourcing (will use local `blog/`) |
+| Option | Effect                                      |
+| ------ | ------------------------------------------- |
+| `repo` | Source `blog/` from the target blog repo    |
+| `dir`  | Pass a local directory to source to `blog/` |
 
 ## Known bugs
 
