@@ -158,6 +158,7 @@ Command syntax:
 | ------- | ----------------------------------------------- |
 | `true`  | Source `blog/` from the target blog repo        |
 | `false` | Skip the blog sourcing (will use local `blog/`) |
+| `dir`   | Use target dir as `blog/` source (copied)       |
 
 ## Known bugs
 
