@@ -26,8 +26,8 @@
     "components"
   ],
   "scripts": {
-    "build": "vuepress build blog --temp blog/.temp",
-    "dev": "vuepress dev blog --temp blog/.temp",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider vuepress build blog --temp blog/.temp",
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider vuepress dev blog --temp blog/.temp",
     "lint": "eslint . --ext .js,.vue",
     "prepublishOnly": "npm run test && npm run blog:build && conventional-changelog -p angular -r 2 -i CHANGELOG.md -s",
     "test": "jest"
