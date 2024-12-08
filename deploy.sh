@@ -73,7 +73,7 @@ fi
 
 if [ "$1" = 'prod' ]; then
     echo 'yarn: Build VuePress'
-    yarn build
+    NODE_OPTIONS=--openssl-legacy-provider yarn build
 
     cd blog/.vuepress/dist
 

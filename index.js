@@ -2,7 +2,7 @@ const removeMd = require('remove-markdown')
 const path = require('path')
 const pick = require('lodash/pick')
 
-module.exports = themeConfig => {
+module.exports = (themeConfig) => {
   /**
    * Default theme configuration
    */
@@ -89,9 +89,6 @@ module.exports = themeConfig => {
   /**
    * Integrate plugins
    */
-
-  const enableSmoothScroll = themeConfig.smoothScroll === true
-
   const plugins = [
     '@vuepress/plugin-nprogress',
     ['@vuepress/medium-zoom', true],
@@ -102,7 +99,7 @@ module.exports = themeConfig => {
       },
     ],
     ['@vuepress/blog', blogPluginOptions],
-    ['smooth-scroll', enableSmoothScroll],
+    ['seo', themeConfig.seo || {}],
   ]
 
   /**
