@@ -2,7 +2,7 @@
   <section id="header-wrapper">
     <header id="header">
       <div class="header-wrapper">
-        <nav class="navbar navbar-expand-md navbar-light fixed-top">
+        <nav class="navbar navbar-expand-md navbar-light">
           <div class="container">
             <NavLink link="/" class="navbar-brand">
               <img :src="$withBase($themeConfig.logo)" />
