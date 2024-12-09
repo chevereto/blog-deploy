@@ -10,7 +10,7 @@ else
     echo 'Using config.sh.dist'
 fi
 
-if [ "$1" = 'prod' ] && [ "$2" != 'repo' ]; then
+if [ "$1" = 'prod' ] && [ "$2" != 'true' ]; then
     echo -n "Are you sure to going production without sourcing blog repo? It will source from existing blog/ (y/n)? "
     read answer
     if [ "$answer" != "${answer#[Nn]}" ]; then
@@ -19,7 +19,7 @@ if [ "$1" = 'prod' ] && [ "$2" != 'repo' ]; then
     fi
 fi
 
-if [ "$2" = 'repo' ]; then
+if [ "$2" = 'true' ]; then
     if [ -d "blog" ]; then
         cd blog
         if [ "$(git config --get remote.origin.url)" != "$GIT_BLOG" ]; then
@@ -73,7 +73,7 @@ fi
 
 if [ "$1" = 'prod' ]; then
     echo 'yarn: Build VuePress'
-    yarn build
+    NODE_OPTIONS=--openssl-legacy-provider yarn build
 
     cd blog/.vuepress/dist
 

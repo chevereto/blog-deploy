@@ -4,7 +4,7 @@
 
 It takes a markdown blog repo and generates a VuePress app that can be configured to be automatically published to GitHub pages.
 
-[View Demo](https://rodolfo.is/)
+[View Demo](https://rodolfoberrios.com/)
 
 ## Requirements
 
@@ -87,7 +87,7 @@ Requirements:
 - `REPO_BLOG_ACCESS_TOKEN` token for the repo above
 - `REPO_HOSTING` example `rodolfoberrios/rodolfoberrios.github.io`
 - `REPO_HOSTING_ACCESS_TOKEN` token for the repo above
-- `CNAME` example `rodolfo.is`
+- `CNAME` example `rodolfoberrios.com`
 
 ### Require Secrets (on blog repo)
 
@@ -142,7 +142,7 @@ chmod +x deploy.sh
 Command syntax:
 
 ```sh
-./deploy.sh <to> <target>
+./deploy.sh <to> <doSource>
 ```
 
 `<to>` deploy options:
@@ -152,12 +152,13 @@ Command syntax:
 | `dev`  | Deploys dev preview   |
 | `prod` | Deploys to production |
 
-`<target>` option:
+`<doSource>` option:
 
-| Option | Effect                                      |
-| ------ | ------------------------------------------- |
-| `repo` | Source `blog/` from the target blog repo    |
-| `dir`  | Pass a local directory to source to `blog/` |
+| Option  | Effect                                          |
+| ------- | ----------------------------------------------- |
+| `true`  | Source `blog/` from the target blog repo        |
+| `false` | Skip the blog sourcing (will use local `blog/`) |
+| `dir`   | Use target dir as `blog/` source (copied)       |
 
 ## Known bugs
 
