@@ -1,27 +1,39 @@
-name: Build and Deploy
-on: [push, repository_dispatch]
+name: Build
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+  push:
+    branches:
+      - main
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout self
-        uses: actions/checkout@master
+        uses: actions/checkout@v7
 
       - name: Checkout blog
-        uses: actions/checkout@v2
+        uses: actions/checkout@v7
         with:
           repository: ${{ secrets.REPO_BLOG }}
           token: ${{ secrets.REPO_BLOG_ACCESS_TOKEN }}
           path: blog
 
+      - name: Move blog/public/ to blog/.vuepress/
+        run: mv -f blog/public/ blog/.vuepress/public/
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
 
-      - name: Move blog/public/ to blog/.vuepress/
-        run: mv -f blog/public/ blog/.vuepress/public/
-
-      - uses: actions/cache@v4
+      - uses: actions/cache@v6
         id: yarn-cache
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
@@ -29,12 +41,17 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      - name: vuepress-deploy
-        uses: jenkey2011/vuepress-deploy@master
-        env:
-          ACCESS_TOKEN: ${{ secrets.REPO_HOSTING_ACCESS_TOKEN }}
-          TARGET_REPO: ${{ secrets.REPO_HOSTING }}
-          TARGET_BRANCH: main
-          BUILD_SCRIPT: yarn && yarn build
-          BUILD_DIR: blog/.vuepress/dist/
-          CNAME: ${{ secrets.CNAME }}
+      - name: Install VuePress dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build VuePress
+        run: yarn build
+
+      - name: Deploy blog
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          personal_token: ${{ secrets.REPO_HOSTING_ACCESS_TOKEN }}
+          external_repository: ${{ secrets.REPO_HOSTING }}
+          publish_branch: main
+          publish_dir: blog/.vuepress/dist
+          cname: ${{ secrets.CNAME }}
